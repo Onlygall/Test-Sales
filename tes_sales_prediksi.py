@@ -32,7 +32,7 @@ if uploaded_file:
         df = df.rename(columns={"Tanggal": "ds", "Penjualan": "y"})
 
         st.subheader("📊 Data yang Diupload")
-        st.dataframe(df.tail())
+        st.dataframe(df.())
 
         # Buat model Prophet
         model = Prophet()
@@ -48,7 +48,7 @@ if uploaded_file:
 
         # Tampilkan tabel prediksi
         st.subheader("📋 Tabel Prediksi")
-        st.dataframe(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']])
+        st.dataframe(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(30))
 
     except Exception as e:
         st.error(f"Terjadi kesalahan saat memproses data: {e}")
