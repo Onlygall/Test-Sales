@@ -32,7 +32,7 @@ if uploaded_file:
         df = df.rename(columns={"Tanggal": "ds", "Penjualan": "y"})
 
         st.subheader("📊 Data yang Diupload")
-        st.dataframe(df.())
+        st.dataframe(df.tail())
 
         # Buat model Prophet
         model = Prophet()
