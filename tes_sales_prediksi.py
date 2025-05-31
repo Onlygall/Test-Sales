@@ -48,7 +48,7 @@ if uploaded_file:
 
         # Tampilkan tabel prediksi
         st.subheader("📋 Tabel Prediksi")
-        st.dataframe(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']].tail(30))
+        st.dataframe(forecast[['ds', 'yhat', 'yhat_lower', 'yhat_upper']])
 
     except Exception as e:
         st.error(f"Terjadi kesalahan saat memproses data: {e}")
